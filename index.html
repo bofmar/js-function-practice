@@ -10,10 +10,10 @@
             const numberRegex = /^\d+$/;
             const stringRegex = /^[a-z]+/i;
 
-            askForNumber();
+            //askForNumber();
             //askForTwoNumbers();
             //askForWord();
-            //askForAnotherWord();
+            askForAnotherWord();
 
             function askForNumber(){
                 let num = prompt("Please eneter a number:");
@@ -52,12 +52,9 @@
 
             function askForWord(){
                 let myString = prompt("Type in a word");
-                if(checkIfLetterFirst(myString)){
-                    alert(`${myString} capitalized is ${capitalize(myString)}`);
-                }
-                else{
-                    askForWord();
-                }
+                (checkIfLetterFirst(myString))
+                ? alert(`${myString} capitalized is ${capitalize(myString)}`)
+                : askForWord();
             }
 
             function checkIfLetterFirst(myString){
@@ -75,12 +72,9 @@
             
             function askForAnotherWord(){
                 let myString = prompt("Input anothe word");
-                if(checkIfLetterFirst(myString)){
-                    alert(`The last letter of ${myString} is ${lastLetter(myString)}`);
-                }
-                else{
-                    askForAnotherWord();
-                }                
+                (checkIfLetterFirst(myString))
+                ? alert(`The last letter of ${myString} is ${lastLetter(myString)}`)
+                : askForAnotherWord();     
             }
 
             function lastLetter(myString){
