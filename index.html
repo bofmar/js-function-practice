@@ -21,12 +21,8 @@
             }
 
             function add7(num){
-                if(isItANumber(num)){
-                    alert(`${num} + 7 is ${+num + 7}`);
-                }
-                else{
-                    askForNumber();
-                }
+                (isItANumber(num)) ? alert(`${num} + 7 is ${+num + 7}`) 
+                : askForNumber();
             }
 
             function isItANumber(num){
@@ -56,12 +52,9 @@
 
             function askForWord(){
                 let myString = prompt("Type in a word");
-                if(checkIfLetterFirst(myString)){
-                    alert(`${myString} capitalized is ${capitalize(myString)}`);
-                }
-                else{
-                    askForWord();
-                }
+                (checkIfLetterFirst(myString))
+                ? alert(`${myString} capitalized is ${capitalize(myString)}`)
+                : askForWord();
             }
 
             function checkIfLetterFirst(myString){
@@ -78,13 +71,10 @@
             }
             
             function askForAnotherWord(){
-                let myString = prompt("Input anothe word");
-                if(checkIfLetterFirst(myString)){
-                    alert(`The last letter of ${myString} is ${lastLetter(myString)}`);
-                }
-                else{
-                    askForAnotherWord();
-                }                
+                let myString = prompt("Input another word");
+                (checkIfLetterFirst(myString))
+                ? alert(`The last letter of ${myString} is ${lastLetter(myString)}`)
+                : askForAnotherWord();     
             }
 
             function lastLetter(myString){
