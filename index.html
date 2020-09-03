@@ -10,9 +10,9 @@
             const numberRegex = /^\d+$/;
             const stringRegex = /^[a-z]+/i;
 
-            //askForNumber();
-            //askForTwoNumbers();
-            //askForWord();
+            askForNumber();
+            askForTwoNumbers();
+            askForWord();
             askForAnotherWord();
 
             function askForNumber(){
@@ -71,7 +71,7 @@
             }
             
             function askForAnotherWord(){
-                let myString = prompt("Input anothe word");
+                let myString = prompt("Input another word");
                 (checkIfLetterFirst(myString))
                 ? alert(`The last letter of ${myString} is ${lastLetter(myString)}`)
                 : askForAnotherWord();     
