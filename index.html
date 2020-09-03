@@ -11,9 +11,9 @@
             const stringRegex = /^[a-z]+/i;
 
             askForNumber();
-            askForTwoNumbers();
-            askForWord();
-            askForAnotherWord();
+            //askForTwoNumbers();
+            //askForWord();
+            //askForAnotherWord();
 
             function askForNumber(){
                 let num = prompt("Please eneter a number:");
@@ -21,12 +21,8 @@
             }
 
             function add7(num){
-                if(isItANumber(num)){
-                    alert(`${num} + 7 is ${+num + 7}`);
-                }
-                else{
-                    askForNumber();
-                }
+                (isItANumber(num)) ? alert(`${num} + 7 is ${+num + 7}`) 
+                : askForNumber();
             }
 
             function isItANumber(num){
