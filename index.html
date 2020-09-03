@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript functions practice</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <script>
+            const numberRegex = /^\d+$/;
+            const stringRegex = /^[a-z]+/i;
+
+            askForNumber();
+            askForTwoNumbers();
+            askForWord();
+            askForAnotherWord();
+
+            function askForNumber(){
+                let num = prompt("Please eneter a number:");
+                add7(num);
+            }
+
+            function add7(num){
+                if(isItANumber(num)){
+                    alert(`${num} + 7 is ${+num + 7}`);
+                }
+                else{
+                    askForNumber();
+                }
+            }
+
+            function isItANumber(num){
+                if(!numberRegex.test(num)){
+                    alert("You need to input a valid number");
+                }
+                else{
+                    return true;
+                }
+            }
+
+            function askForTwoNumbers(){
+                let num1 = prompt("Enter first number");
+                if(isItANumber(num1)){
+                    let num2 = prompt("Enter second number");
+                    if(isItANumber(num2)){
+                        multiply(num1, num2);
+                        return 0;
+                    }
+                }
+                askForTwoNumbers();
+            }
+
+            function multiply(num1, num2){
+                alert(`${num1} * ${num2} equals ${num1 * num2}`);               
+            }
+
+            function askForWord(){
+                let myString = prompt("Type in a word");
+                if(checkIfLetterFirst(myString)){
+                    alert(`${myString} capitalized is ${capitalize(myString)}`);
+                }
+                else{
+                    askForWord();
+                }
+            }
+
+            function checkIfLetterFirst(myString){
+                if(!stringRegex.test(myString)){
+                    alert("You need to input a valid word");
+                }
+                else{
+                    return true;
+                }
+            }
+
+            function capitalize(myString){
+                return myString.charAt(0).toUpperCase(  ) + myString.slice(1);
+            }
+            
+            function askForAnotherWord(){
+                let myString = prompt("Input anothe word");
+                if(checkIfLetterFirst(myString)){
+                    alert(`The last letter of ${myString} is ${lastLetter(myString)}`);
+                }
+                else{
+                    askForAnotherWord();
+                }                
+            }
+
+            function lastLetter(myString){
+                return myString.charAt(myString.length - 1);
+            }
+        </script>
+    </body>
+</html>
